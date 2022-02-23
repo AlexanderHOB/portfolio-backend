@@ -59,7 +59,16 @@ const userSchema = new Schema({
             type: Number,
             required:true
         }
-    }
+    },
+    Qualifications:[
+        {
+            skillId:{
+                type: Schema.Types.ObjectId,
+                ref:'Qualification',
+                required:true
+            }
+        }
+    ]
 
 });
 
