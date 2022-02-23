@@ -3,13 +3,29 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose'); 
 const dotenv = require('dotenv');
 
+//routes
+const projectRoutes = require('./routers/projects');
+const app = express();
 //Setting dotenv to get environment variables
 dotenv.config();
+//body parser use json
+app.use(bodyParser.json());
+//Set routes 
+app.use(projectRoutes);
 
-const app = express();
 
+//error handle
 
+app.use((err,req,res,next)=>{
+    const status = err.statusCode || 500;
+    const message = err.message;
+    const data = err.data;
 
+    res.status(status).json({
+        message,
+        data
+    });
+})
 
 //start connection with database
 mongoose
