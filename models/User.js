@@ -15,6 +15,19 @@ const userSchema = new Schema({
         type:String,
         required:true,
     },
+    phone:{
+        type:String,
+        required:true
+    },
+    perfilUrl:{
+        type:String,
+        required:true
+    },
+    photo:{
+        type:String,
+        required:true
+    },
+
     resetToken: String,
     resetTokenExpiration: Date,
     projects:{
