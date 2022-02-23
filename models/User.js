@@ -17,7 +17,21 @@ const userSchema = new Schema({
     },
     resetToken: String,
     resetTokenExpiration: Date,
-
+    projects:{
+        items:[
+            { 
+                projectId:{
+                    type: Schema.Types.ObjectId,
+                    ref:'Project',
+                    required:true
+                },
+            },
+        ],
+        quantity:{
+            type: Number,
+            required:true
+        }
+    }
 
 });
 
