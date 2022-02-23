@@ -15,6 +15,11 @@ const projectSchema = new Schema({
         type:String,
         required:true
     },
+    status:{
+        type:Boolean,
+        required:true,
+        default:true
+    },
     userId:{
         type: Schema.Types.ObjectId,
         ref:'User',

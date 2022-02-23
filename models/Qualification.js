@@ -11,6 +11,11 @@ const qualificationSchema = new Schema({
         type: String,
         required: true
     },
+    status:{
+        type:Boolean,
+        required:true,
+        default:true
+    },
     year:{
         type:String,
         required:true
