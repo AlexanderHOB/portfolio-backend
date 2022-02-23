@@ -31,6 +31,21 @@ const userSchema = new Schema({
             type: Number,
             required:true
         }
+    },
+    skills:{
+        items:[
+            { 
+                skillId:{
+                    type: Schema.Types.ObjectId,
+                    ref:'Skill',
+                    required:true
+                },
+            },
+        ],
+        quantity:{
+            type: Number,
+            required:true
+        }
     }
 
 });
