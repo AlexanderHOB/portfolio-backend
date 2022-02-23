@@ -8,6 +8,10 @@ dotenv.config();
 
 const app = express();
 
+
+
+
+//start connection with database
 mongoose
     .connect(process.env.DATABASE)
     .then(result=>{
