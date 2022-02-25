@@ -5,6 +5,9 @@ const dotenv = require('dotenv');
 
 //routes
 const projectRoutes = require('./routers/projects');
+const authRoutes = require('./routers/auth');
+
+
 const app = express();
 //Setting dotenv to get environment variables
 dotenv.config();
@@ -12,7 +15,7 @@ dotenv.config();
 app.use(bodyParser.json());
 //Set routes 
 app.use(projectRoutes);
-
+app.use('/auth',authRoutes);
 
 //error handle
 

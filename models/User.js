@@ -21,11 +21,11 @@ const userSchema = new Schema({
     },
     perfilUrl:{
         type:String,
-        required:true
+        required:false
     },
     photo:{
         type:String,
-        required:true
+        required:false
     },
 
     resetToken: String,
@@ -42,8 +42,7 @@ const userSchema = new Schema({
         ],
         quantity:{
             type: Number,
-            required:true
-        }
+        },
     },
     skills:{
         items:[
@@ -57,8 +56,8 @@ const userSchema = new Schema({
         ],
         quantity:{
             type: Number,
-            required:true
-        }
+        },
+
     },
     Qualifications:[
         {
@@ -67,7 +66,8 @@ const userSchema = new Schema({
                 ref:'Qualification',
                 required:true
             }
-        }
+        },
+
     ]
 
 });
