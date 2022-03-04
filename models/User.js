@@ -30,20 +30,11 @@ const userSchema = new Schema({
 
     resetToken: String,
     resetTokenExpiration: Date,
-    projects:{
-        items:[
+    projects:[
             { 
-                projectId:{
-                    type: Schema.Types.ObjectId,
-                    ref:'Project',
-                    required:true
-                },
-            },
-        ],
-        quantity:{
-            type: Number,
-        },
-    },
+                type: Schema.Types.ObjectId,
+                ref:'Project',
+            }],
     skills:{
         items:[
             { 

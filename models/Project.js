@@ -25,5 +25,5 @@ const projectSchema = new Schema({
         ref:'User',
         required:true
     }
-});
+},{timestamp:true});
 module.exports = mongoose.model('Project', projectSchema);
