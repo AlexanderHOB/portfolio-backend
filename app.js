@@ -12,6 +12,7 @@ const authRoutes = require('./routers/auth');
 
 const app = express();
 
+const version = '/apiv1';
 //Setting dotenv to get environment variables
 dotenv.config();
 //body parser use json
@@ -46,14 +47,19 @@ const uploadImageProject = multer({ storage,fileFilter }).single('image');
 app.use(uploadImageProject);
 
 //Set routes 
-app.use(projectRoutes);
-app.use(skillRoutes);
-app.use(qualificationRoutes);
+app.use(version,projectRoutes);
+app.use(version,skillRoutes);
+app.use(version,qualificationRoutes);
 
-app.use('/auth',authRoutes);
+app.use(version+'/auth',authRoutes);
 
+//middleware to 404 not found
+app.get('*', (req, res,next) => {
+    res.status(404).json({
+        message: 'Page not found'
+    });
+});
 //error handle
-
 app.use((err,req,res,next)=>{
     const status = err.statusCode || 500;
     const message = err.message;
