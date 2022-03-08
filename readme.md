@@ -55,8 +55,8 @@ When placing a request to get all the projects
 GET apiv1/projects
 ```
 ##### params
-		- **perPage**, limits the number of items in a JSON response, by default the value is 20
-		- **page**, allows you to paginate the elements of a JSON response, by default it is 1
+		- ** perPage **, limits the number of items in a JSON response, by default the value is 20
+		- ** page **, allows you to paginate the elements of a JSON response, by default it is 1
 ##### examples
 ```
 	GET /apiv1/products?perPage=23
@@ -115,12 +115,12 @@ When making a request to create a project.
 	POST apiv1/projects
 ```
 ##### Data
-```
+```JSON
 {
     "name":"name of project",
-	"description":"description of project",
-	"status:"True or False",
-	"image": File of image
+    "description":"description of project",
+    "status:"True or False",
+    "image": File of image
 }
 ```
 ##### Response
@@ -144,12 +144,12 @@ When making a request to update a project.
 	PUT apiv1/projects/projectId
 ```
 ##### Data
-```
+```JSON
 {
     "name":"name of project update",
-	"description":"description of project",
-	"status:"True or False",
-	"image": File of image
+    "description":"description of project",
+    "status:"True or False",
+    "image": File of image
 }
 ```
 ##### Response
