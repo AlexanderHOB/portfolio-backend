@@ -41,13 +41,10 @@ const userSchema = new Schema({
             ref:'Skill',
         }
     ],
-    Qualifications:[
+    qualifications:[
         {
-            skillId:{
-                type: Schema.Types.ObjectId,
-                ref:'Qualification',
-                required:true
-            }
+            type: Schema.Types.ObjectId,
+            ref:'Qualification',
         },
 
     ]

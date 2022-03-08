@@ -6,7 +6,7 @@ const multer  = require('multer'); // charge files
 //routes
 const projectRoutes = require('./routers/project');
 const skillRoutes = require('./routers/skill');
-
+const qualificationRoutes = require('./routers/qualification');
 const authRoutes = require('./routers/auth');
 
 
@@ -48,6 +48,8 @@ app.use(uploadImageProject);
 //Set routes 
 app.use(projectRoutes);
 app.use(skillRoutes);
+app.use(qualificationRoutes);
+
 app.use('/auth',authRoutes);
 
 //error handle
