@@ -25,14 +25,12 @@ exports.getProjects = (req,res,next) => {
             })
         })
         .catch(err => {
-            if(err.statusCode){
+            if(!err.statusCode){
                 err.statusCode=500;
             }
             next(err);
         });
 }
-
-
 //create a project
 exports.createProject = (req,res,next) => {
     const errors = validationResult(req);
@@ -175,7 +173,7 @@ exports.deteteProject = (req, res, next) =>{
     Project.findById(projectId)
         .then(project =>{
             if(!project){
-                const error = new Error('Could not find post.');
+                const error = new Error('Could not find Project.');
                 error.statusCode = 404;
                 throw error;
             }

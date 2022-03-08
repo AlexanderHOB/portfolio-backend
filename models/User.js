@@ -35,21 +35,12 @@ const userSchema = new Schema({
                 type: Schema.Types.ObjectId,
                 ref:'Project',
             }],
-    skills:{
-        items:[
-            { 
-                skillId:{
-                    type: Schema.Types.ObjectId,
-                    ref:'Skill',
-                    required:true
-                },
-            },
-        ],
-        quantity:{
-            type: Number,
-        },
-
-    },
+    skills:[
+        {
+            type: Schema.Types.ObjectId,
+            ref:'Skill',
+        }
+    ],
     Qualifications:[
         {
             skillId:{

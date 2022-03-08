@@ -2,7 +2,7 @@ const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
 const isAuth = require('../middlewares/isAuth');
-const projectController = require('../controllers/Projects');
+const projectController = require('../controllers/Project');
 
 
 //get all projects
